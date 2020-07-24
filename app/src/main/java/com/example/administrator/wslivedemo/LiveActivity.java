@@ -132,6 +132,8 @@ public class LiveActivity extends AppCompatActivity {
         public void onWriteError(int errno) {
             Log.i("test111","推流出错,请尝试重连");
             Toast.makeText(LiveActivity.this,"推流出错",Toast.LENGTH_LONG).show();
+            mLiveCameraView.stopStreaming();
+            mLiveCameraView.startStreaming(rtmpUrl);
         }
 
         @Override
