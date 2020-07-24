@@ -27,7 +27,7 @@ import me.lake.librestreaming.ws.filter.hardfilter.extra.GPUImageCompatibleFilte
 
 //https://github.com/WangShuo1143368701/WSLiveDemo/blob/master/README.md
 public class LiveActivity extends AppCompatActivity {
-    private static final String               TAG = LiveActivity.class.getSimpleName();
+
     private              StreamLiveCameraView mLiveCameraView;
     private              TextView             tv_time;
     private              TextView             tv_left_time;
