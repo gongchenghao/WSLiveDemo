@@ -36,8 +36,8 @@ public class StreamConfig {
 
         public static final int DEFAULT_VIDEO_FPS = 20;
 
-        public static final int DEFAULT_VIDEO_GOP = 2;
-
+//        public static final int DEFAULT_VIDEO_GOP = 2;
+        public static final int DEFAULT_VIDEO_GOP = 1;
     }
 
     public static RESConfig build(Context context, StreamAVOption option) {

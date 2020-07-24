@@ -63,7 +63,6 @@ public class LiveActivity extends AppCompatActivity {
         streamAVOption.previewWidth = 1280;
         streamAVOption.previewHeight = 720;
 
-
         mLiveCameraView.init(this, streamAVOption);
         mLiveCameraView.addStreamStateListener(resConnectionListener);
 
