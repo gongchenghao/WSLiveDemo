@@ -35,6 +35,7 @@ public class LiveActivity extends AppCompatActivity {
     private              String               rtmpUrl = "rtmp://twangjiepi.dynu.net:9906/live/"; //推流地址
     private              LiveUI               mLiveUI;
     private int totalTime = 3*60*60; //单位:秒
+    private boolean isReStart = false; //用来判断中断之后是否重新推流
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +116,6 @@ public class LiveActivity extends AppCompatActivity {
         return dateStr;
     }
 
-
     RESConnectionListener resConnectionListener = new RESConnectionListener() {
         @Override
         public void onOpenConnectionResult(int result) {
@@ -132,8 +132,8 @@ public class LiveActivity extends AppCompatActivity {
         public void onWriteError(int errno) {
             Log.i("test111","推流出错,请尝试重连");
             Toast.makeText(LiveActivity.this,"推流出错",Toast.LENGTH_LONG).show();
+            isReStart = true;
             mLiveCameraView.stopStreaming();
-            mLiveCameraView.startStreaming(rtmpUrl);
         }
 
         @Override
@@ -145,7 +145,11 @@ public class LiveActivity extends AppCompatActivity {
             }else {
                 Toast.makeText(LiveActivity.this,"关闭推流失败",Toast.LENGTH_LONG).show();
             }
-
+            if (isReStart)
+            {
+                isReStart = false;
+                mLiveCameraView.startStreaming(rtmpUrl);
+            }
         }
     };
 
