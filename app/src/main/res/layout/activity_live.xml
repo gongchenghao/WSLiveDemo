@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_live"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#5ab5ef"
+    tools:context=".LiveActivity">
+    <TextView
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="远程考试中"
+        android:background="#0a82f2"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="剩余时间: "
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/tv_left_time"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="01 时 02 分"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_name"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="姓名:    张三 "
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/tv_code"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="准考证号:   000000000"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:background="@drawable/shape_bd_bg_8"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <me.lake.librestreaming.ws.StreamLiveCameraView
+            android:id="@+id/stream_previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include layout="@layout/layout_activity_live_ui"/>
+        <LinearLayout
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="#33000000"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/shape_bd_bg_4"
+                android:layout_width="12dp"
+                android:layout_height="12dp"/>
+            <TextView
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="visible"
+                android:textColor="#ffffff"
+                android:text="提示:  请考生全程保持头肩手在监控视频内"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textSize="12dp"
+        android:layout_marginLeft="5dp"
+        android:visibility="visible"
+        android:textColor="#ffffff"
+        android:text="提示:请考生全程保持头肩手在监控视频内"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
